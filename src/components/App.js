@@ -15,14 +15,14 @@ class App extends React.Component {
     }
   }
 
-  onChangeType = ({ target: { value } }) => {
-    this.setState({ filters: { ...this.state.filters, type: value } });
-  };
+  // onChangeType = ({ target: { value } }) => {
+  //   this.setState({ filters: { ...this.state.filters, type: value } });
+  // };
 
-  // onChangeType = ({target:{value}}) => {
-  //   // this.setState({ filters: { ...this.state.filters, type: value } });
-  //   this.setState({filters:{type: value}})
-  // }
+  onChangeType = ({target:{value}}) => {
+    // this.setState({ filters: { ...this.state.filters, type: value } });
+    this.setState({filters:{type: value}})
+  }
 
   onFindPetsClick = async() => {
     console.log("change Filters Called")
