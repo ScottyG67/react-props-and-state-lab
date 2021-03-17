@@ -15,10 +15,14 @@ class App extends React.Component {
     }
   }
 
-  onChangeType = ({target:{value}}) => {
-    // this.setState({ filters: { ...this.state.filters, type: value } });
-    this.setState({filters:{type: value}})
-  }
+  onChangeType = ({ target: { value } }) => {
+    this.setState({ filters: { ...this.state.filters, type: value } });
+  };
+
+  // onChangeType = ({target:{value}}) => {
+  //   // this.setState({ filters: { ...this.state.filters, type: value } });
+  //   this.setState({filters:{type: value}})
+  // }
 
   onFindPetsClick = async() => {
     console.log("change Filters Called")
@@ -50,7 +54,10 @@ class App extends React.Component {
         <div className="ui container">
           <div className="ui grid">
             <div className="four wide column">
-              <Filters onChangeType ={this.onChangeType} onFindPetsClick={this.onFindPetsClick}/>
+              <Filters 
+              onChangeType={this.onChangeType} 
+              onFindPetsClick={this.onFindPetsClick}
+              />
             </div>
             <div className="twelve wide column">
              <PetBrowser pets={this.state.pets} onAdoptPet={this.onAdoptPet}/>
